@@ -52,7 +52,7 @@ class Chatbot:
         if query:
             # st.chat_message("user").write(query)
             async with httpx.AsyncClient(timeout=60.0) as client:
-                response = await client.post(f"{self.api_url}/query", json={"query": query})
+                response = await client.post(f"{self.api_url}/query", json={"query": query},timeout=120.0)
                 if response.status_code == 200:
                     messages = response.json()["messages"]
                     st.session_state["messages"] = messages
