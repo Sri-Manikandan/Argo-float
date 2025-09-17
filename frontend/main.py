@@ -1,5 +1,4 @@
 import asyncio
-from utils.logger import logger
 import streamlit as st
 from chatbot import Chatbot
 
@@ -16,7 +15,7 @@ async def main():
     
     API_URL = "http://localhost:8000"
 
-    st.set_page_config(page_title="MCP Client", page_icon=":robot_face:")
+    # st.set_page_config(page_title="MCP Client", page_icon=":robot_face:")
 
     chatbot = Chatbot(API_URL)
 
